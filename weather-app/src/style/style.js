@@ -63,7 +63,6 @@ export const StyledLeftPanel = styled.div`
     margin-top: 1rem;
     font-size: 2rem;
   }
-  
 `;
 
 export const StyledCard = styled.div`
@@ -95,6 +94,8 @@ export const StyledCard = styled.div`
   }
   h1 {
     margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
   }
 `;
 

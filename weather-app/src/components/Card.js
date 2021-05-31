@@ -1,14 +1,18 @@
 import React from "react";
 import { StyledCard } from "../style/style";
+import moment from "moment";
 
-const Card = ({ tempMax, image, tempMin, date }) => {
+const Card = ({ tempMax, image, tempMin, timeDay }) => {
   const picture = `http://openweathermap.org/img/wn/${image}@4x.png`;
   const celsiusMax = Math.floor(tempMax - 273.15);
   const celsiusMin = Math.floor(tempMin - 273.15);
 
+  const date = new Date(timeDay * 1000);
+  const formatedDate = moment(date).format("dddd");
+
   return (
     <StyledCard>
-      <h1>{date}</h1>
+      <h1>{formatedDate}</h1>
       <img src={picture} alt="picture2" />
       <div>
         <h3>
