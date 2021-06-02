@@ -8,7 +8,6 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [city, setCity] = useState("");
 
   useEffect(() => {
     axios
@@ -33,8 +32,6 @@ function App() {
             latitude={latitude}
             setLatitude={setLatitude}
             setLongitude={setLongitude}
-            city={city}
-            setCity={setCity}
           />
           <RightPanel weather={weather} />
         </div>
