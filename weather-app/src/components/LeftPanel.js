@@ -60,13 +60,12 @@ const LeftPanel = ({
   };
 
   const Geolocation = (e) => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setCurrentLat(position.coords.latitude);
-      setCurrentLon(position.coords.longitude);
-      setLatitude(position.coords.latitude);
-      setLongitude(position.coords.longitude);
+    setTimeout(() => {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        setCurrentLat(position.coords.latitude);
+        setCurrentLon(position.coords.longitude);
+      });
     });
-    FetchGeoData();
   };
 
   const FetchGeoData = () => {
@@ -77,6 +76,9 @@ const LeftPanel = ({
       .then((data) => {
         setWeather(data.data);
       });
+
+    setLatitude(currentLat);
+    setLongitude(currentLon);
   };
 
   return (
@@ -90,7 +92,7 @@ const LeftPanel = ({
         icon={faMapMarkerAlt}
         size="3x"
         className="icon"
-        onClick={Geolocation}
+        onClick={FetchGeoData}
       />
       <p>Check your location</p>
       <p>
@@ -101,7 +103,7 @@ const LeftPanel = ({
       <img src={picture} alt="slika" />
       <h2>{weather}</h2>
       <h4>{celsius} C</h4>
-      <p>{moment().format("MMMM Do YYYY")}</p>
+      <h3>{moment().format("MMMM Do YYYY")}</h3>
     </StyledLeftPanel>
   );
 };

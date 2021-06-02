@@ -49,8 +49,8 @@ export const StyledLeftPanel = styled.div`
   img {
     margin-top: 5rem;
     background-color: #f6f6f6;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     background-color: #101041;
   }
   h4 {
@@ -62,6 +62,74 @@ export const StyledLeftPanel = styled.div`
   p {
     margin-top: 1rem;
     font-size: 2rem;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    h1 {
+      margin-top: 5vh;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .inputButton {
+      display: flex;
+      justify-content: center;
+    }
+    input {
+      width: 60%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      width: 5rem;
+      height: 3rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #d4d4d4;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    form {
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 0rem;
+    }
+    img {
+      margin-top: 0rem;
+      background-color: #f6f6f6;
+      height: 200px;
+      width: 200px;
+      background-color: #101041;
+    }
+    h4 {
+      font-size: 3rem;
+    }
+    @media (max-width: 380px) {
+      h3 {
+        padding-bottom: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      span {
+        font-size: 0.8rem;
+        display: none;
+      }
+      input {
+        width: 60%;
+        height: 2rem;
+      }
+      button {
+        height: 2rem;
+      }
+      img {
+        height: 100px;
+        width: 100px;
+      }
+    }
   }
 `;
 
@@ -80,8 +148,9 @@ export const StyledCard = styled.div`
   padding-bottom: 2rem;
 
   img {
-    width: 150px;
-    height: 150px;
+    width: 60%;
+    height: 10vh;
+    object-fit: cover;
     box-shadow: 2px 2px 15px 5px #ededf3;
     border-radius: 100%;
   }
@@ -97,6 +166,25 @@ export const StyledCard = styled.div`
     font-size: 1rem;
     font-weight: normal;
   }
+  @media (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    img {
+      width: 50%;
+      height: fit-content;
+      border-radius: 20%;
+    }
+    h1 {
+      font-size: 2rem;
+      border-top: 2px solid grey;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const StyledRightPanel = styled.div`
@@ -104,11 +192,21 @@ export const StyledRightPanel = styled.div`
   align-items: center;
   width: 70%;
   flex-direction: column;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const Daily = styled.div`
   display: flex;
   width: 100%;
+  @media (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const StyledInfo = styled.div`
@@ -152,6 +250,40 @@ export const StyledInfo = styled.div`
           font-size: 1.5rem;
         }
       }
+    }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      text-align: center;
+    }
+    .main {
+      width: 100%;
+    }
+    .flex {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .container {
+      text-align: center;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media (max-width: 380px) {
+    width: 100vw;
+    h1 {
+      font-size: 2rem;
+      text-align: center;
     }
   }
 `;

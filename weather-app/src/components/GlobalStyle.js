@@ -13,7 +13,20 @@ const GlobalStyle = createGlobalStyle`
 .App{
     display: flex;
     width: 100%;
+    @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  @media (max-width: 356px) {
+    width: 100%;
+  }
+  @media (max-width: 256px) {
+    width: 100%;
+  }
 }
+
 
 `;
 
